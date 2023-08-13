@@ -1,6 +1,6 @@
 import Background from "../cmps/Background"
 
-const Home = ({ acc }) => {
+const Home = ({ acc, game }) => {
   const logOut = () => {
     localStorage.clear()
     window.location.reload()
