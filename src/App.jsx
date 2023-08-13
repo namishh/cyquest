@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { auth, provider, db } from "./firebase"
 import { signInWithPopup } from "firebase/auth"
-import { getData } from "./data"
 import Home from "./pages/Home"
 import { collection, setDoc } from "firebase/firestore";
 import SignIn from "./pages/SignIn"
