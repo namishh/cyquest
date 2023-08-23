@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from "react"
-
+import files from "../files"
+import BaseWindow from "../cmps/BaseWindow"
 // create Game context
 const GameContext = createContext()
 
