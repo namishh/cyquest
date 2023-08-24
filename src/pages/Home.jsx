@@ -30,12 +30,13 @@ const Home = () => {
         })}
       </div>
     </div>
-    <div className="relative h-[9vh] bg-neutral flex justify-between p-4 items-center">
-      {openMenu && <div className="absolute h-[30rem] w-[27rem] left-[0] -top-[30rem] bg-neutral flex flex-col gap-4 p-4">
-        <div className="text-xl p-4">Leaderboard</div>
-        <div onClick={logOut} className="text-xl p-4">Logout</div>
+    <div className="relative h-[9vh] bg-base-100 flex justify-between p-4 items-center">
+      {openMenu && <div className="absolute h-[30rem] w-[27rem] left-[0] -top-[30rem] bg-base-100 flex flex-col gap-4 p-4">
+        <div className="text-xl cursor-pointer p-4 bg-neutral rounded-lg">{acc.email}</div>
+        <div className="text-xl p-4 cursor-pointer">Leaderboard</div>
+        <div onClick={logOut} className="text-xl p-4 cursor-pointer">Logout</div>
       </div>}
-      <img onClick={() => setOpenMenu(!openMenu)} src="./windows.png" alt="" />
+      <img onClick={() => setOpenMenu(!openMenu)} className="cursor-pointer" src="./windows.png" alt="" />
       <div className="flex flex-col">
         <p className="text-md">{time.time}</p>
         <p className="text-md">{time.date}</p>

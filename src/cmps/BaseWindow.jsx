@@ -12,7 +12,7 @@ const BaseWindow = ({ children, file, id }) => {
   }
   return <div className="absolute pointer-events-none"><Draggable handle=".handle">
     <div className=" pointer-events-auto h-[30rem] w-[30rem] rounded-lg bg-white">
-      <div className="top p-4 bg-neutral rounded-t-lg handle flex justify-between">
+      <div className="top p-4 bg-base-100 rounded-t-lg handle flex justify-between">
         <div onClick={handle} className="h-4 w-4 rounded-full bg-error"></div>
         <div>{file.name}</div>
       </div>

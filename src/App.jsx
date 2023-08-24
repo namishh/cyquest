@@ -1,21 +1,24 @@
 import { useEffect, useState } from "react"
-import { auth, provider, db } from "./firebase"
-import { signInWithPopup } from "firebase/auth"
+import { auth, db } from "./firebase"
+import { signInWithEmailAndPassword } from "firebase/auth"
 import Home from "./pages/Home"
 import { collection, setDoc } from "firebase/firestore";
-import SignIn from "./pages/SignIn"
 import { getDocs, doc } from "firebase/firestore";
 import { useGameContext } from "./context/game";
 
-const App = () => {
-  const { acc, setAcc, gameData, setGameData } = useGameContext()
-  const signIn = function() {
+
+import Background from "./cmps/Background"
+const SignIn = ({ signin }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { setAcc, setGameData } = useGameContext()
+
+  const signIn = (e) => {
+    e.preventDefault();
     let json = {}
-    signInWithPopup(auth, provider).then(async data => {
+    signInWithEmailAndPassword(auth, email, password).then(async data => {
       json = {
-        displayName: data.user.displayName,
         email: data.user.email,
-        pfp: data.user.photoURL,
         uid: data.user.uid
       }
       setAcc(json)
@@ -30,8 +33,35 @@ const App = () => {
         setGameData({ uid: exists.data.uid, level: exists.data.level })
       }
       localStorage.setItem("user", JSON.stringify({ ...json }))
+    }).catch(err => {
+      console.log("no user lol")
     })
-  }
+  };
+  return <div className="w-screen h-screen flex justify-center items-center">
+    <Background />
+    <div className="z-[1223] ">
+      <form onSubmit={signIn} className="flex z-[1223]  gap-8 flex-col items-center justify-center">
+        <h1 className="text-6xl text-center font-extrabold mb-4">Welcome to cyquest</h1>
+        <div className="relative bg-neutral" data-te-input-wrapper-init>
+          <input type="text" className="bg-transparent p-4 w-[30rem] h-[4rem] outline-none" value={email}
+            onChange={(e) => setEmail(e.target.value)} />
+        </div>
+        <div className="relative bg-neutral" data-te-input-wrapper-init>
+          <input type="password" className=" bg-transparent p-4 w-[30rem] h-[4rem] outline-none" value={password}
+            onChange={(e) => setPassword(e.target.value)} />
+        </div>
+        <div className="relative bg-neutral" data-te-input-wrapper-init>
+        </div>
+        <button type="submit" className="px-7 py-4 bg-neutral text-white flex items-center gap-4" onClick={signin}><img className="h-8 w-8" src="./signin.png" />
+          Sign In With Email</button>
+      </form>
+    </div>
+  </div>
+}
+
+
+const App = () => {
+  const { acc, setAcc, setGameData } = useGameContext()
   useEffect(() => {
     (async () => {
       const jdata = JSON.parse(localStorage.getItem("user"))
@@ -54,7 +84,7 @@ const App = () => {
   }, []);
   return (
     <>
-      {acc ? <Home /> : <SignIn signin={signIn} />}
+      {acc ? <Home /> : <SignIn />}
     </>
   )
 }
