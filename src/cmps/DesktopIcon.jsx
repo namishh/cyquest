@@ -13,7 +13,7 @@ const DesktopIcon = ({ picture, name, d }) => {
   }
   const handle = () => {
     const id = uuidv4()
-    setWindows([...windows, { file: d, win: <BaseWindow file={d} id={id}>hi</BaseWindow>, id }])
+    setWindows([...windows, { file: d, win: <BaseWindow file={d} id={id}>{d.comp}</BaseWindow>, id }])
   }
   return (
     <div className="pointer-events-auto cursor-pointer" onClick={handle}>
