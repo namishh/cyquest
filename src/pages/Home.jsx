@@ -19,7 +19,7 @@ const Home = () => {
     backgroundImage: `url(${wallpaper})`
   }}>
     <div className="h-[91vh] relative">
-      <div className="p-4 pointer-events-none absolute grid h-full grid-rows-6 grid-columns-12">
+      <div className="p-8 pointer-events-none absolute grid h-full grid-rows-6 grid-columns-12">
         {files.map((i, j) => {
           return <DesktopIcon key={j} picture={`${i.icon}`} name={i.name} d={i} />
         })}
@@ -32,7 +32,7 @@ const Home = () => {
     </div>
     <div className="relative h-[9vh] bg-base-100 flex justify-between p-4 items-center">
       {openMenu && <div className="absolute h-[30rem] w-[27rem] left-[0] -top-[30rem] bg-base-100 flex flex-col gap-4 p-4">
-        <div className="text-xl cursor-pointer p-4 bg-neutral rounded-lg">{acc.email}</div>
+        <div className="text-xl flex gap-4 p-4 bg-neutral rounded-lg justify-between"><img className="h-8 w-8" src="./profile.png" />{acc.email}</div>
         <div className="text-xl p-4 cursor-pointer">Leaderboard</div>
         <div onClick={logOut} className="text-xl p-4 cursor-pointer">Logout</div>
       </div>}

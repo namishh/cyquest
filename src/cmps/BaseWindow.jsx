@@ -10,10 +10,10 @@ const BaseWindow = ({ children, file, id }) => {
     windows = windows.filter(item => item.id !== win.id)
     setWindows(windows)
   }
-  return <div className="absolute pointer-events-none"><Draggable handle=".handle">
-    <div className=" pointer-events-auto h-[30rem] w-[30rem] rounded-lg bg-neutral">
+  return <Draggable bounds="parent" handle=".handle">
+    <div className={`absolute pointer-events-auto rounded-lg bg-neutral`}>
       <div className="top p-4 bg-base-100 rounded-t-lg handle flex justify-between">
-        <div onClick={handle} className="h-4 w-4 rounded-full bg-error"></div>
+        <div onClick={handle} className="cursor-pointer h-4 w-4 rounded-full bg-error"></div>
         <div>{file.name}</div>
       </div>
       <div className="p-3">
@@ -21,7 +21,6 @@ const BaseWindow = ({ children, file, id }) => {
       </div>
     </div>
   </Draggable>
-  </div>
 }
 
 export default BaseWindow

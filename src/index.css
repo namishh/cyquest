@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.rhap_button-clear {
+  margin-top: 0.7rem;
+  color: #5c7cfa;
+}
+
+.rhap_download-progress {
+  background: #222;
+}
+.rhap_progress-bar {
+  margin: 0 1rem;
+  background: #222;
+}
+
+.rhap_progress-indicator {
+ background: #5c7cfa;
+ height: 1rem;
+ width: 1rem;
+ transform: translateY(.1rem);
+}
+
+.rhap_container{
+  background: #090909;
+}
+
+.rhap_time {
+  color: white;
+}
