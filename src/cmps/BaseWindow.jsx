@@ -4,7 +4,6 @@ import { useGameContext } from "../context/game.js"
 const BaseWindow = ({ children, file, id }) => {
   let { windows, setWindows } = useGameContext()
   const handle = () => {
-    console.log(id)
     const wins = windows.filter(i => i.id === id)
     const win = wins[0]
     windows = windows.filter(item => item.id !== win.id)

@@ -5,7 +5,7 @@ import Home from "./pages/Home"
 import { collection, setDoc } from "firebase/firestore";
 import { getDocs, doc } from "firebase/firestore";
 import { useGameContext } from "./context/game";
-
+import chats from "./chat";
 
 import Background from "./cmps/Background"
 const SignIn = ({ signin }) => {
@@ -19,7 +19,7 @@ const SignIn = ({ signin }) => {
     signInWithEmailAndPassword(auth, email, password).then(async data => {
       json = {
         email: data.user.email,
-        uid: data.user.uid
+        uid: data.user.uid,
       }
       setAcc(json)
       const col = collection(db, 'users')
@@ -27,10 +27,10 @@ const SignIn = ({ signin }) => {
       const b = a.docs.map(doc => ({ data: doc.data() }))
       const exists = b.find(c => c.data.uid === json.uid)
       if (!exists) {
-        setDoc(doc(db, 'users', (json.uid)), { uid: json.uid, level: 1 }).then(a => console.log(a))
-        setGameData({ uid: json.uid, level: 1 })
+        setDoc(doc(db, 'users', (json.uid)), { uid: json.uid, level: 1, chats: chats }).then(a => console.log(a))
+        setGameData({ uid: json.uid, level: 1, chats })
       } else {
-        setGameData({ uid: exists.data.uid, level: exists.data.level })
+        setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats })
       }
       localStorage.setItem("user", JSON.stringify({ ...json }))
     }).catch(err => {
@@ -72,10 +72,10 @@ const App = () => {
       const b = a.docs.map(doc => ({ data: doc.data() }))
       const exists = b.find(c => c.data.uid === jdata.uid)
       if (!exists) {
-        setDoc(doc(db, 'users', (jdata.uid)), { uid: jdata.uid, level: 1 }).then(a => console.log(a))
-        setGameData({ uid: jdata.uid, level: 1 })
+        setDoc(doc(db, 'users', (jdata.uid)), { uid: jdata.uid, level: 1, chats: chats }).then(a => console.log(a))
+        setGameData({ uid: jdata.uid, level: 1, chats: chats })
       } else {
-        setGameData({ uid: exists.data.uid, level: exists.data.level })
+        setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats })
       }
     })();
     return () => {

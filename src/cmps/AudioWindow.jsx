@@ -11,7 +11,6 @@ const AudioWindow = ({ audio }) => {
       customAdditionalControls={[]}
       customVolumeControls={[]}
       src={audio}
-      onPlay={e => console.log("onPlay")}
     // other props here
     />
   </div>

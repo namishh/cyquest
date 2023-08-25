@@ -2,14 +2,13 @@ import { useEffect, useState } from "react"
 import wallpaper from "../assets/rock.jpeg"
 import { useGameContext } from "../context/game"
 import { useDate } from "../context/time"
-import BaseWindow from "../cmps/BaseWindow"
 import files from "../files"
 import DesktopIcon from "../cmps/DesktopIcon"
 
 
 const Home = () => {
   const time = useDate()
-  const { acc, gameData, setGame, windows, setWindows } = useGameContext()
+  const { acc, windows } = useGameContext()
   const [openMenu, setOpenMenu] = useState(false)
   const logOut = () => {
     localStorage.clear()

@@ -1,5 +1,6 @@
 import ImageWindow from "./cmps/ImageWindow"
 import AudioWindow from "./cmps/AudioWindow"
+import ChatWindow from "./cmps/ChatWindow"
 import pastlives from "./assets/song.mp3"
 const files = [
   {
@@ -26,6 +27,12 @@ const files = [
         <li>For any clues and assistance you can contact the mods in the discord servel</li>
       </ul>
     </div>,
+  },
+  {
+    name: 'Messages',
+    icon: 'chat',
+    level: 1,
+    comp: <ChatWindow />,
   },
 ]
 
