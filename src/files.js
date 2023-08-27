@@ -4,6 +4,7 @@ import ChatWindow from "./cmps/ChatWindow"
 import pastlives from "./assets/song.mp3"
 import GalleryWindow from "./cmps/GalleryWindow"
 import Calculator from "./cmps/Calculator"
+import Todo from "./cmps/Todo"
 
 const files = [
   {
@@ -30,6 +31,12 @@ const files = [
         <li>For any clues and assistance you can contact the mods in the discord servel</li>
       </ul>
     </div>,
+  },
+  {
+    name: 'Todo',
+    icon: 'todo',
+    level: 1,
+    comp: <Todo />,
   },
   {
     name: 'Gallery',

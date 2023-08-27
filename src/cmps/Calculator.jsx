@@ -1,10 +1,10 @@
 import { useState } from "react"
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useGameContext } from "../context/game"
 import BaseWindow from "./BaseWindow";
 const Calculator = () => {
   const [value, setValue] = useState("")
-  const { acc, windows, setWindows } = useGameContext()
+  const { windows, setWindows } = useGameContext()
   function uuidv4() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
       .replace(/[xy]/g, function(c) {
@@ -39,7 +39,6 @@ const Calculator = () => {
         console.log("access granted")
       }
     } catch (error) {
-      console.log(error)
       toast("Someone is trying to cook garbage!! 🔥🔥 ")
     }
   }

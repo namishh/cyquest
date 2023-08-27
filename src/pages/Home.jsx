@@ -32,7 +32,7 @@ const Home = () => {
       theme="dark"
     />
     <div className="h-[91vh] relative">
-      <div className="p-8 pointer-events-none absolute grid h-full grid-rows-6 grid-columns-12">
+      <div className="p-8 pointer-events-none absolute h-[91vh] flex flex-col  flex-wrap">
         {files.map((i, j) => {
           return <DesktopIcon key={j} picture={`${i.icon}`} name={i.name} d={i} />
         })}

@@ -17,9 +17,9 @@ const DesktopIcon = ({ picture, name, d }) => {
   }
   return (
     <div className="pointer-events-auto cursor-pointer" onClick={handle}>
-      <div className={`p-2 z-[213123]  w-16 inline-flex flex-col justify-center items-center inline-block gap-2`}>
-        <img src={`${picture}.png`} className="h-12 w-12" alt="" />
-        <p className="text-lg text-[#fff] ">{name}</p>
+      <div className={`mt-[12px] mx-8 ml-0 z-[213123]  w-[60px] inline-flex flex-col justify-center items-center inline-block gap-2`}>
+        <img src={`${picture}.png`} className="h-[40px] w-[40px]" alt="" />
+        <p className="text-base text-[#fff] ">{name}</p>
       </div>
     </div>
   )
