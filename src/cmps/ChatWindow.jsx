@@ -1,5 +1,6 @@
 import { useState } from "react"
-
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 import { auth, db } from "../firebase"
 import { collection, setDoc, getDocs, doc } from "firebase/firestore";
 
@@ -12,6 +13,7 @@ const ChatWindow = () => {
   const [user, setUser] = useState(gameData.chats[0].name)
   const onSubmit = async (e) => {
     e.preventDefault()
+    toast("Remember that sending messages is just for completeness of app and does nothing to progress the game!");
     if (text !== "") {
       const data = gameData
       const msg = "^" + text

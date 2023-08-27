@@ -4,12 +4,14 @@ import { useGameContext } from "../context/game"
 import { useDate } from "../context/time"
 import files from "../files"
 import DesktopIcon from "../cmps/DesktopIcon"
-
+import { ToastContainer, toast } from 'react-toastify';
+import CalAndWeather from "../cmps/CalAndWeather"
 
 const Home = () => {
   const time = useDate()
   const { acc, windows } = useGameContext()
   const [openMenu, setOpenMenu] = useState(false)
+  const [openCal, setOpenCal] = useState(false)
   const logOut = () => {
     localStorage.clear()
     window.location.reload()
@@ -17,6 +19,18 @@ const Home = () => {
   return <div className="w-screen h-screen bg-cover" style={{
     backgroundImage: `url(${wallpaper})`
   }}>
+    <ToastContainer
+      position="top-right"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="dark"
+    />
     <div className="h-[91vh] relative">
       <div className="p-8 pointer-events-none absolute grid h-full grid-rows-6 grid-columns-12">
         {files.map((i, j) => {
@@ -35,8 +49,9 @@ const Home = () => {
         <div className="text-xl p-4 cursor-pointer">Leaderboard</div>
         <div onClick={logOut} className="text-xl p-4 cursor-pointer">Logout</div>
       </div>}
+      {openCal && <CalAndWeather />}
       <img onClick={() => setOpenMenu(!openMenu)} className="cursor-pointer" src="./windows.png" alt="" />
-      <div className="flex flex-col">
+      <div onClick={() => setOpenCal(!openCal)} className="cursor-pointer flex flex-col">
         <p className="text-md">{time.time}</p>
         <p className="text-md">{time.date}</p>
       </div>
