@@ -30,13 +30,11 @@ const ChatWindow = () => {
       const b = a.docs.map(doc => ({ data: doc.data() }))
       const exists = b.find(c => c.data.uid === gameData.uid)
       setGameData({ uid: exists.data.uid, level: exists.data.level, chats: newChats })
-      setDoc(doc(db, 'users', (gameData.uid)), { uid: gameData.uid, level: gameData.level, chats: newChats }).then(a => console.log(a))
-
       setText('')
     }
   }
   return <div className="w-[54rem] overflow-auto h-[32rem] flex">
-    <div className="p-4 bg-[#111] w-48 flex-col-reverse flex justify-start gap-2">
+    <div className="p-4 bg-[#111] w-48 flex-col flex justify-start gap-2">
       {gameData.chats.map((i, j) => {
         return <div onClick={() => {
           setUser(i.name)
@@ -48,7 +46,7 @@ const ChatWindow = () => {
         </div>
       })}
     </div>
-    <div className="grow flex-col flex px-2 justify-end gap-2">
+    <div className="flex-col overflow-scroll h-[32rem] flex px-2 justify-end gap-2">
       {logs.map((i, j) => {
         return <div className={`p-2 text-black max-w-[30rem] rounded-lg ${i.startsWith("~") ? 'self-start bg-info' : 'self-end bg-primary'}`} key={j}>{i.slice(1)}</div>
       })}

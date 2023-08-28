@@ -228,3 +228,9 @@
   text-align: right;
   flex: 1;
 }
+
+.react-pdf__Page__canvas {
+    margin: 0 auto;
+    width: 17.5rem !important;
+    height: 25rem !important;
+  }
