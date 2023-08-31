@@ -1,9 +1,8 @@
-import ImageWindow from "./cmps/ImageWindow"
-import AudioWindow from "./cmps/AudioWindow"
 import ChatWindow from "./cmps/ChatWindow"
-import pastlives from "./assets/song.mp3"
 import GalleryWindow from "./cmps/GalleryWindow"
 import Calculator from "./cmps/Calculator"
+import SussyApp from "./cmps/SussyApp"
+import MailWindow from "./cmps/MailWindow"
 import Todo from "./cmps/Todo"
 import Explorer from "./cmps/Explorer"
 
@@ -38,6 +37,18 @@ const files = [
     level: 1,
     comp: <ChatWindow />,
   },
+  {
+    name: 'X',
+    icon: 'socialmedia',
+    level: 1,
+    comp: <SussyApp />,
+  },
+  {
+    name: 'Mail',
+    icon: 'mail',
+    level: 1,
+    comp: <MailWindow />
+  }
 ]
 
 export default files

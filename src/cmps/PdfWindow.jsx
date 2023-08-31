@@ -16,7 +16,6 @@ const PdfWindow = ({ file }) => {
   }
 
   const next = () => {
-    console.log("hi")
     if (pageNumber < numPages) {
       setPageNumber(pageNumber + 1)
     } else {

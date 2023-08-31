@@ -33,7 +33,7 @@ const ChatWindow = () => {
       setText('')
     }
   }
-  return <div className="w-[54rem] overflow-auto h-[32rem] flex">
+  return <div className="w-[54rem] overflow-scroll h-[32rem] flex">
     <div className="p-4 bg-[#111] w-48 flex-col flex justify-start gap-2">
       {gameData.chats.map((i, j) => {
         return <div onClick={() => {

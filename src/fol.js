@@ -2,6 +2,7 @@ import ImageWindow from "./cmps/ImageWindow"
 import AudioWindow from "./cmps/AudioWindow"
 import pastlives from "./assets/song.mp3"
 import PdfWindow from "./cmps/PdfWindow"
+import VideoWindow from "./cmps/VideoWindow"
 const folders = [
   {
     name: "Home",
@@ -32,6 +33,12 @@ const folders = [
     name: "Evidence",
     image: "evidence",
     files: [
+      {
+        name: 'a.mp4',
+        icon: 'video',
+        level: 1,
+        comp: <VideoWindow vid="video.mp4" w="650" h="400" />,
+      },
       {
         name: 'clue.png',
         icon: 'image',

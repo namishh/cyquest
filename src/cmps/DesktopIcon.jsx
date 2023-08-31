@@ -19,7 +19,7 @@ const DesktopIcon = ({ picture, name, d }) => {
     <div className="pointer-events-auto cursor-pointer" onClick={handle}>
       <div className={`mt-[12px] mx-8 ml-0 z-[213123]  w-[60px] inline-flex flex-col justify-center items-center inline-block gap-2`}>
         <img src={`${picture}.png`} className="h-[40px] w-[40px]" alt="" />
-        <p className="text-base text-[#fff] ">{name}</p>
+        <p className="text-base text-[#fff] text-center ">{name}</p>
       </div>
     </div>
   )
