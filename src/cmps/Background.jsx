@@ -6,7 +6,7 @@ const Background = () => {
     await loadSlim(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async container => {
+  const particlesLoaded = useCallback(async () => {
   }, []);
 
   return <div className="fixed z-[10] w-full h-full">

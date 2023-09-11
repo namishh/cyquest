@@ -2,7 +2,7 @@ import { useState } from "react"
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import { db } from "../firebase"
-import { collection, setDoc, getDocs, doc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 import { useGameContext } from "../context/game"
 

@@ -5,8 +5,15 @@ import SussyApp from "./cmps/SussyApp"
 import MailWindow from "./cmps/MailWindow"
 import Todo from "./cmps/Todo"
 import Explorer from "./cmps/Explorer"
+import LeaderBoard from "./cmps/LeaderBoard"
 
 const files = [
+  {
+    name: 'Podium',
+    icon: 'leaderboard',
+    level: 1,
+    comp: <LeaderBoard />,
+  },
   {
     name: 'Files',
     icon: 'explorer',

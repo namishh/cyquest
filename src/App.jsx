@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { auth, db } from "./firebase"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import Home from "./pages/Home"
+import { toast } from 'react-toastify';
 import { collection, setDoc } from "firebase/firestore";
 import { getDocs, doc } from "firebase/firestore";
 import { useGameContext } from "./context/game";
@@ -27,14 +28,14 @@ const SignIn = ({ signin }) => {
       const b = a.docs.map(doc => ({ data: doc.data() }))
       const exists = b.find(c => c.data.uid === json.uid)
       if (!exists) {
-        setDoc(doc(db, 'users', (json.uid)), { uid: json.uid, level: 1, chats: chats }).then(a => console.log(a))
-        setGameData({ uid: json.uid, level: 1, chats })
+        setDoc(doc(db, 'users', (json.uid)), { uid: json.uid, level: 1, chats: chats, email: json.email }).then(a => console.log(a))
+        setGameData({ uid: json.uid, level: 1, chats, email: json.email })
       } else {
-        setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats })
+        setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email })
       }
       localStorage.setItem("user", JSON.stringify({ ...json }))
-    }).catch(err => {
-      console.log("no user lol")
+    }).catch(() => {
+      toast("No such user lmao! Cannot even type properly")
     })
   };
   return <div className="w-screen h-screen flex justify-center items-center">
@@ -72,10 +73,10 @@ const App = () => {
       const b = a.docs.map(doc => ({ data: doc.data() }))
       const exists = b.find(c => c.data.uid === jdata.uid)
       if (!exists) {
-        setDoc(doc(db, 'users', (jdata.uid)), { uid: jdata.uid, level: 1, chats: chats }).then(a => console.log(a))
+        setDoc(doc(db, 'users', (jdata.uid)), { uid: jdata.uid, level: 1, chats: chats, email: jdata.email }).then(a => console.log(a))
         setGameData({ uid: jdata.uid, level: 1, chats: chats })
       } else {
-        setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats })
+        setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email })
       }
     })();
     return () => {
