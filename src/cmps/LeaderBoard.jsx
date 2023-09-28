@@ -1,8 +1,10 @@
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase"
 import { useEffect, useState } from "react";
+import { useGameContext } from "../context/game"
 const LeaderBoard = () => {
   const [chats, setChats] = useState([])
+  const { question } = useGameContext()
   useEffect(() => {
     const doit = async () => {
       let ch = []
@@ -18,7 +20,7 @@ const LeaderBoard = () => {
     doit()
     return () => {
     };
-  }, [])
+  }, [question])
   return <div className="min-h-[30rem] min-w-[30rem]">
     <div className="overflow-x-auto">
       <table className="table table-zebra">
