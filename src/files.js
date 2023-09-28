@@ -24,7 +24,7 @@ const files = [
   {
     name: 'Files',
     icon: 'explorer',
-    level: 1,
+    level: 2,
     comp: <Explorer />,
   },
   {

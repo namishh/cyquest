@@ -234,3 +234,8 @@
     width: 27rem !important;
     height: 34rem !important;
   }
+
+::-webkit-scrollbar {
+    width: 0px;
+    margin-left: 3rem;
+}

@@ -9,6 +9,7 @@ const questions = [
   {
     question: <div>
       <p className="question">This is the second question</p>
+      <img src="./mail.png" />
     </div>,
     answer: "234",
     lvl: 2,

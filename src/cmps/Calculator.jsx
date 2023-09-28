@@ -28,7 +28,7 @@ const Calculator = () => {
       const evaluar = eval(value)
       setValue(evaluar.toString())
 
-      if (evaluar == 4) {
+      if (value == "4*8") {
         const file1 = {
           name: 'TOP LEVEL SECRET WINDOW',
           icon: 'image',

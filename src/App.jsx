@@ -12,7 +12,7 @@ import Background from "./cmps/Background"
 const SignIn = ({ signin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { setAcc, setGameData } = useGameContext()
+  const { setAcc, setGameData, setInfo } = useGameContext()
 
   const signIn = (e) => {
     e.preventDefault();
@@ -30,8 +30,10 @@ const SignIn = ({ signin }) => {
       if (!exists) {
         setDoc(doc(db, 'users', (json.uid)), { uid: json.uid, level: 1, chats: chats, email: json.email }).then(a => console.log(a))
         setGameData({ uid: json.uid, level: 1, chats, email: json.email })
+        setInfo({ uid: json.uid, level: 1, chats, email: json.email })
       } else {
         setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email })
+        setInfo({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email })
       }
       localStorage.setItem("user", JSON.stringify({ ...json }))
     }).catch(() => {
@@ -62,7 +64,7 @@ const SignIn = ({ signin }) => {
 
 
 const App = () => {
-  const { acc, setAcc, setGameData } = useGameContext()
+  const { acc, setAcc, setGameData, setInfo } = useGameContext()
   useEffect(() => {
     (async () => {
       if (!localStorage.getItem("user")) return
@@ -76,8 +78,10 @@ const App = () => {
       if (!exists) {
         setDoc(doc(db, 'users', (jdata.uid)), { uid: jdata.uid, level: 1, chats: chats, email: jdata.email }).then(a => console.log(a))
         setGameData({ uid: jdata.uid, level: 1, chats: chats })
+        setInfo({ uid: jdata.uid, level: 1, chats: chats })
       } else {
         setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email })
+        setInfo({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email })
       }
     })();
     return () => {

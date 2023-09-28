@@ -9,7 +9,7 @@ import CalAndWeather from "../cmps/CalAndWeather"
 
 const Home = () => {
   const time = useDate()
-  const { acc, windows } = useGameContext()
+  const { acc, windows, info, gameData } = useGameContext()
   const [openMenu, setOpenMenu] = useState(false)
   const [openCal, setOpenCal] = useState(false)
   const logOut = () => {
@@ -33,8 +33,8 @@ const Home = () => {
     />
     <div className="h-[91vh] relative">
       <div className="p-8 pointer-events-none absolute h-[91vh] flex flex-col  flex-wrap">
-        {files.map((i, j) => {
-          return <DesktopIcon key={j} picture={`${i.icon}`} name={i.name} d={i} />
+        {info != {} && files.map((i, j) => {
+          return info.level >= i.level && <DesktopIcon key={j} picture={`${i.icon}`} name={i.name} d={i} />
         })}
       </div>
       <div className="absolute pointer-events-none top-0 left-0 h-full w-full">

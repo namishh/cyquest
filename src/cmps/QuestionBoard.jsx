@@ -7,12 +7,12 @@ import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify"
 
 const QuestionBoard = () => {
-  const { question, setQuestion, acc, } = useGameContext()
+  const { question, setQuestion, acc, info, setInfo } = useGameContext()
   const [answer, setAnswer] = useState("")
   const totalQuestions = questions.length
-  const [info, setInfo] = useState({})
   const handleSubmit = (e) => {
     e.preventDefault()
+    console.log(acc)
     setAnswer("")
     if (answer === question.answer) {
       console.log(info, totalQuestions)

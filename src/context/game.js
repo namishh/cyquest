@@ -9,9 +9,10 @@ export const GameProvider = ({ children }) => {
   const [gameData, setGameData] = useState({})
   const [windows, setWindows] = useState([])
   const [questionIndex, setQuestionIndex] = useState(0)
+  const [info, setInfo] = useState({})
   const [question, setQuestion] = useState(questions[0])
   return (
-    <GameContext.Provider value={{ acc, setAcc, gameData, setGameData, windows, setWindows, question, setQuestion, questionIndex, setQuestionIndex }}>
+    <GameContext.Provider value={{ acc, setAcc, gameData, setGameData, windows, setWindows, question, setQuestion, questionIndex, setQuestionIndex, info, setInfo }}>
       {children}
     </GameContext.Provider>
   )
