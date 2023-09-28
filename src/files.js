@@ -6,8 +6,15 @@ import MailWindow from "./cmps/MailWindow"
 import Todo from "./cmps/Todo"
 import Explorer from "./cmps/Explorer"
 import LeaderBoard from "./cmps/LeaderBoard"
+import QuestionBoard from "./cmps/QuestionBoard"
 
 const files = [
+  {
+    name: 'Questions',
+    icon: 'quiz',
+    level: 1,
+    comp: <QuestionBoard />,
+  },
   {
     name: 'Podium',
     icon: 'leaderboard',

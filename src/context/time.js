@@ -5,7 +5,6 @@ export const useDate = () => {
 
   React.useEffect(() => {
     const timer = setInterval(() => { // Creates an interval which will update the current data every minute
-      // This will trigger a rerender every component that uses the useDate hook.
       setDate(new Date());
     }, 60 * 1000);
     return () => {

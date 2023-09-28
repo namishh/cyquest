@@ -65,6 +65,7 @@ const App = () => {
   const { acc, setAcc, setGameData } = useGameContext()
   useEffect(() => {
     (async () => {
+      if (!localStorage.getItem("user")) return
       const jdata = JSON.parse(localStorage.getItem("user"))
       if (!jdata) return
       setAcc(jdata)

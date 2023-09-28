@@ -19,9 +19,9 @@ const LeaderBoard = () => {
     return () => {
     };
   }, [])
-  return <div className="h-[30rem] w-[30rem]">
-    <div class="overflow-x-auto">
-      <table class="table table-zebra">
+  return <div className="min-h-[30rem] min-w-[30rem]">
+    <div className="overflow-x-auto">
+      <table className="table table-zebra">
         <thead>
           <tr>
             <th></th>
@@ -34,7 +34,7 @@ const LeaderBoard = () => {
             return <tr key={j} >
               <th>{j + 1}</th>
               <td>{i.user}</td>
-              <td>{i.lvl}</td>
+              <td>{i.lvl * 1000}</td>
             </tr>
           })}
         </tbody>
