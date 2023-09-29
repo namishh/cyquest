@@ -1,24 +1,74 @@
-import ImageGallery from "react-image-gallery";
-
-import "react-image-gallery/styles/css/image-gallery.css";
-
-const images = [
-  {
-    original: "https://picsum.photos/id/1018/1000/600/",
-    thumbnail: "https://picsum.photos/id/1018/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1015/1000/600/",
-    thumbnail: "https://picsum.photos/id/1015/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/",
-  },
-];
-
+import { Carousel } from "@material-tailwind/react";
 const GalleryWindow = () => {
-  return <div className="h-[415px] w-[800px]"><ImageGallery loading="lazy" thumbnailPosition="left" showFullscreenButton={false} showPlayButton={false} originalHeight="200px" items={images} /> </div>
+  return (
+    <Carousel className="rounded-xl h-[500px] w-[600px]">
+      <img
+        src="./cafe.png"
+        alt="image 1"
+        className="h-full w-full object-contain"
+      />
+      <img
+        src="./cafe1.png"
+        alt="image 2"
+        className="h-full w-full object-contain"
+      />
+      <img
+        src="./controller.png"
+        alt="image 3"
+        className="h-full w-full object-contain"
+      />
+      <img
+        src="./game.png"
+        alt="image 3"
+        className="h-full w-full object-contain"
+      />
+      <img
+        src="./hm.png"
+        alt="image 3"
+        className="h-full w-full object-contain"
+      />
+      <img
+        src="./ihatethis.png"
+        alt="image 3"
+        className="h-full w-full object-contain"
+      />
+      <img
+        src="./iwon.png"
+        alt="image 3"
+        className="h-full w-full object-contain"
+      />
+      <img
+        src="./library-backstory.png"
+        alt="image 3"
+        className="h-full w-full object-contain"
+      />
+      <img
+        src="./pretty.jpg"
+        alt="image 3"
+        className="h-full w-full object-contain"
+      />
+      <img
+        src="./setupW.jpg"
+        alt="image 3"
+        className="h-full w-full object-contain"
+      />
+      <img
+        src="./sky.jpg"
+        alt="image 3"
+        className="h-full w-full object-contain"
+      />
+      <img
+        src="./stairs.png"
+        alt="image 3"
+        className="h-full w-full object-contain"
+      />
+      <img
+        src="./weee.png"
+        alt="image 3"
+        className="h-full w-full object-contain"
+      />
+    </Carousel>
+  );
 }
 
 export default GalleryWindow

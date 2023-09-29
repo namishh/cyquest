@@ -13,7 +13,7 @@ const MailWindow = () => {
         <button onClick={() => setMail("")} className="text-primary ">Go Back</button>
         <p className="mt-4 text-2xl font-bold">{mail.name}</p>
         <p className="mt-2 text-sm mb-4">{mail.id}</p>
-        <p className="mt-2">{mail.desc}</p>
+        <p className="mt-2 whitespace-pre-wrap">{mail.desc}</p>
       </div> :
         <div className="mails flex flex-col gap-2">
           {mails.map((i, k) => {
