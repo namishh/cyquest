@@ -52,7 +52,7 @@ const files = [
     comp: <ChatWindow />,
   },
   {
-    name: 'X',
+    name: 'Zoros',
     icon: 'socialmedia',
     level: 1,
     comp: <SussyApp />,

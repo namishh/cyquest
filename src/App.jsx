@@ -9,6 +9,20 @@ import { useGameContext } from "./context/game";
 import chats from "./chat";
 
 import Background from "./cmps/Background"
+
+const makeName = (mail) => {
+  let a = mail.split("@")[0];
+  a = a.split("_")
+  let prefix = ""
+  if (a[0] === "team") {
+    prefix = "team"
+  } else {
+    prefix = "(ind)"
+  }
+  a.shift("")
+  return prefix + " " + a.join(" ")
+}
+
 const SignIn = ({ signin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,6 +35,7 @@ const SignIn = ({ signin }) => {
       json = {
         email: data.user.email,
         uid: data.user.uid,
+        displayName: makeName(data.user.email)
       }
       setAcc(json)
       const col = collection(db, 'users')
@@ -28,12 +43,12 @@ const SignIn = ({ signin }) => {
       const b = a.docs.map(doc => ({ data: doc.data() }))
       const exists = b.find(c => c.data.uid === json.uid)
       if (!exists) {
-        setDoc(doc(db, 'users', (json.uid)), { uid: json.uid, level: 1, chats: chats, email: json.email }).then(a => console.log(a))
-        setGameData({ uid: json.uid, level: 1, chats, email: json.email })
-        setInfo({ uid: json.uid, level: 1, chats, email: json.email })
+        setDoc(doc(db, 'users', (json.uid)), { uid: json.uid, level: 1, chats: chats, email: json.email, displayName: makeName(json.email) }).then(a => console.log(a))
+        setGameData({ uid: json.uid, level: 1, chats, email: json.email, displayName: makeName(json.email) })
+        setInfo({ uid: json.uid, level: 1, chats, email: json.email, displayName: makeName(json.email) })
       } else {
-        setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email })
-        setInfo({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email })
+        setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email, displayName: makeName(exists.data.email) })
+        setInfo({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email, displayName: makeName(exists.data.email) })
       }
       localStorage.setItem("user", JSON.stringify({ ...json }))
     }).catch(() => {
@@ -80,8 +95,8 @@ const App = () => {
         setGameData({ uid: jdata.uid, level: 1, chats: chats })
         setInfo({ uid: jdata.uid, level: 1, chats: chats })
       } else {
-        setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email })
-        setInfo({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email })
+        setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email, displayName: makeName(exists.data.email) })
+        setInfo({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email, displayName: makeName(exists.data.email) })
       }
     })();
     return () => {

@@ -47,19 +47,6 @@ const folders = [
           </p>
         </div>,
       },
-      {
-        name: 'rules.txt',
-        icon: 'txt',
-        level: 1,
-        comp: <div className="h-[30rem] w-[30rem]">
-          <h2 className="text-2xl mb-2">Rules!</h2>
-          <ul className="list-disc ml-4 text-lg ">
-            <li>This will be 48 online cryptic hunt in the form of an ARG</li>
-            <li>Solving the previous problem is important to move on to the next level</li>
-            <li>For any clues and assistance you can contact the mods in the discord server</li>
-          </ul>
-        </div>,
-      },
     ],
   },
   {
@@ -152,6 +139,28 @@ const folders = [
       },
     ]
   },
+  {
+    name: "Evidence",
+    image: "evidence",
+    files: [
+      {
+        name: 'rules.txt',
+        icon: 'txt',
+        level: 1,
+        comp: <div className="h-[30rem] w-[30rem]">
+          <h2 className="text-2xl mb-2">summary</h2>
+          <ul className="list-disc ml-4 text-lg ">
+            <li>atharva - rip32(connection? maybe mobster or blackmailer) | blocked his chats | definitely not kidnapper (should have hurt me)</li>
+            <li>Atharva -  hate tweets , atharva was stressed [note to self: look for changes in behaviour in past 4 weeks</li>
+            <li>Atharva - ‘fixer’- multiple personalities? or kidnapper. one of the haters on twitter </li>
+            <li>atharva’s last seen @ his home after fight, around 4 pm?</li>
+            <li>note to self : atharva could be the one staging this? im so confused.</li>
+            <li>Also ive removed all the files in evidence just to be safer.</li>
+          </ul>
+        </div>,
+      },
+    ]
+  }
 ]
 
 export default folders

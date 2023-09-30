@@ -2,7 +2,7 @@ import tweets from "../tweets"
 const SussyApp = () => {
   return <div className="h-[35rem] overflow-scroll w-[30rem]">
     <div className="bg-[#111] p-4 flex justify-between items-center">
-      <div className="text-2xl font-bold">twitta</div>
+      <div className="text-2xl font-bold">zoros</div>
       <div className="text-md">log out</div>
     </div>
     <div className="flex-col mt-2 gap-2 flex">
