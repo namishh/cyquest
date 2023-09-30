@@ -64,11 +64,11 @@ const SignIn = ({ signin }) => {
           <input type="text" className="bg-transparent p-4 w-[30rem] h-[4rem] outline-none" value={email}
             onChange={(e) => setEmail(e.target.value)} />
         </div>
-        <div className="relative bg-neutral" data-te-input-wrapper-init>
+        <div className="relative bg-[#222222]" data-te-input-wrapper-init>
           <input type="password" className=" bg-transparent p-4 w-[30rem] h-[4rem] outline-none" value={password}
             onChange={(e) => setPassword(e.target.value)} />
         </div>
-        <div className="relative bg-neutral" data-te-input-wrapper-init>
+        <div className="relative bg-[#222222]" data-te-input-wrapper-init>
         </div>
         <button type="submit" className="px-7 py-4 bg-neutral text-white flex items-center gap-4" onClick={signin}><img className="h-8 w-8" src="./signin.png" />
           Sign In With Email</button>

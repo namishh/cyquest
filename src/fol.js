@@ -15,7 +15,7 @@ const folders = [
       {
         name: 'music.txt',
         icon: 'txt',
-        level: 1,
+        level: 7,
         comp: <div className="h-[30rem] w-[30rem]">
           <h2 className="text-2xl mb-2">music</h2>
           <p className="text-lg whitespace-pre-wrap">
@@ -28,7 +28,7 @@ const folders = [
       {
         name: 'weird.txt',
         icon: 'txt',
-        level: 1,
+        level: 7,
         comp: <div className="h-[30rem] w-[30rem]">
           <h2 className="text-2xl mb-2">weird</h2>
           <p className="text-lg whitespace-pre-wrap">
@@ -39,7 +39,7 @@ const folders = [
       {
         name: 'satisfied.txt',
         icon: 'txt',
-        level: 1,
+        level: 7,
         comp: <div className="h-[30rem] w-[30rem]">
           <h2 className="text-2xl mb-2">satisfied.</h2>
           <p className="text-lg whitespace-pre-wrap">
@@ -56,25 +56,25 @@ const folders = [
       {
         name: 'concert.jpg',
         icon: 'image',
-        level: 1,
+        level: 9,
         comp: <ImageWindow image="concert.jpg" />,
       },
       {
         name: 'struggle.jpg',
         icon: 'image',
-        level: 1,
+        level: 9,
         comp: <ImageWindow image="struggle.jpg" />,
       },
       {
         name: 'game2.png',
         icon: 'image',
-        level: 1,
+        level: 9,
         comp: <ImageWindow image="game2.png" />,
       },
       {
         name: 'ticket.pdf',
         icon: 'pdf',
-        level: 1,
+        level: 9,
         comp: <PdfWindow file="ticket.pdf" />,
       },
     ]
@@ -86,19 +86,19 @@ const folders = [
       {
         name: 'curriculum.pdf',
         icon: 'pdf',
-        level: 1,
+        level: 6,
         comp: <PdfWindow file="curriculum.pdf" />,
       },
       {
         name: 'gamedev.pdf',
         icon: 'pdf',
-        level: 1,
+        level: 6,
         comp: <PdfWindow file="gamedev.pdf" />,
       },
       {
         name: 'letter.pdf',
         icon: 'pdf',
-        level: 1,
+        level: 6,
         comp: <PdfWindow file="letter.pdf" />,
       },
     ]
@@ -110,37 +110,37 @@ const folders = [
       {
         name: '2.mp3',
         icon: 'audio',
-        level: 1,
+        level: 10,
         comp: <AudioWindow audio={two} />,
       },
       {
         name: 'new.mp3',
         icon: 'audio',
-        level: 1,
+        level: 10,
         comp: <AudioWindow audio={neW} />,
       },
       {
         name: 'em.mp3',
         icon: 'audio',
-        level: 1,
+        level: 10,
         comp: <AudioWindow audio={em} />,
       },
       {
         name: 'mayasick.mp3',
         icon: 'audio',
-        level: 1,
+        level: 10,
         comp: <AudioWindow audio={mayaissick} />,
       },
       {
         name: 'work.mp3',
         icon: 'audio',
-        level: 1,
+        level: 10,
         comp: <AudioWindow audio={workmode} />,
       },
       {
         name: 'yes.mp3',
         icon: 'audio',
-        level: 1,
+        level: 10,
         comp: <AudioWindow audio={yes} />,
       },
     ]
@@ -150,9 +150,9 @@ const folders = [
     image: "evidence",
     files: [
       {
-        name: 'rules.txt',
+        name: 'ev.txt',
         icon: 'txt',
-        level: 1,
+        level: 8,
         comp: <div className="h-[30rem] w-[30rem]">
           <h2 className="text-2xl mb-2">summary</h2>
           <ul className="list-disc ml-4 text-lg ">

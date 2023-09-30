@@ -20,8 +20,9 @@ const LeaderBoard = () => {
     doit()
     return () => {
     };
-  }, [question])
+  }, [])
   return <div className="min-h-[30rem] min-w-[30rem]">
+    For reasons, close and open the leaderboard again to refresh it
     <div className="overflow-x-auto">
       <table className="table table-zebra">
         <thead>

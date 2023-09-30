@@ -5,7 +5,27 @@ import { db } from "../firebase"
 import { useState, useEffect } from "react"
 import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify"
-
+import { encodeRailFenceCipher } from "./helper";
+var loadDB = function(str, amount) {
+  if (amount < 0) {
+    return loadDB(str, amount + 26);
+  }
+  var output = "";
+  for (var i = 0; i < str.length; i++) {
+    var c = str[i];
+    if (c.match(/[a-z]/i)) {
+      var code = str.charCodeAt(i);
+      if (code >= 65 && code <= 90) {
+        c = String.fromCharCode(((code - 65 + amount) % 26) + 65);
+      }
+      else if (code >= 97 && code <= 122) {
+        c = String.fromCharCode(((code - 97 + amount) % 26) + 97);
+      }
+    }
+    output += c;
+  }
+  return output;
+};
 const QuestionBoard = () => {
   const { question, setQuestion, acc, info, setInfo } = useGameContext()
   const [answer, setAnswer] = useState("")
@@ -14,7 +34,7 @@ const QuestionBoard = () => {
     e.preventDefault()
     console.log(acc)
     setAnswer("")
-    if (answer === question.answer) {
+    if (encodeRailFenceCipher(loadDB(answer, Number(process.env.REACT_APP_LOADING)), Number(process.env.REACT_APP_RAIL)) === question.answer) {
       console.log(info, totalQuestions)
       if (info.level < totalQuestions) {
         setInfo({ ...info, level: info.level + 1 })
