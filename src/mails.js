@@ -8,16 +8,16 @@ const mails = [
   {
     name: "Re: Request For Case Files",
     id: "jason.citypol@gmail.com",
-    desc: `Dear Dhruv, We hope this email finds you well. We want to acknowledge the sensitivity of your request for access to the case files related to the investigation of Atharva Dua. We understand that there may be personal or important reasons driving your need for this information. 
+    desc: `Dear Dhruv, We hope this email finds you well. We want to acknowledge the sensitivity of your request for access to the case files related to the investigation of Atharva. We understand that there may be personal or important reasons driving your need for this information. 
 While we are committed to upholding the principles of confidentiality and privacy in ongoing investigations, we also recognize the importance of cooperation and understanding in certain circumstances. In light of your sincere request and to assist you in your quest for information, we are willing to consider your request for access to the case files.`
   },
   {
     name: "Request For Case Files",
     id: "jason.citypol@gmail.com",
     desc: `Dear Detective,
-I hope this email finds you well. My name is Dhruv, and I am writing to request access to the case files related to the investigation of Atharva Dua. I understand that this is a sensitive matter, but I believe it is essential to obtain this information for specific reasons.
+I hope this email finds you well. My name is Dhruv, and I am writing to request access to the case files related to the investigation of Atharva. I understand that this is a sensitive matter, but I believe it is essential to obtain this information for specific reasons.
     
-I am not directly involved in the case, but I have a legitimate interest in understanding the details surrounding Atharva Dua's situation. I am aware of the importance of privacy and confidentiality in such matters and assure you that I will handle any information received with the utmost discretion.
+I am not directly involved in the case, but I have a legitimate interest in understanding the details surrounding Atharva.s situation. I am aware of the importance of privacy and confidentiality in such matters and assure you that I will handle any information received with the utmost discretion.
     
 If it is possible to grant me access to the relevant case files or provide me with any available information, I would greatly appreciate it. Please let me know if there are any formal procedures or documents I need to complete to facilitate this request.
     

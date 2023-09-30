@@ -28,19 +28,31 @@ const Calculator = () => {
       const evaluar = eval(value)
       setValue(evaluar.toString())
 
-      if (value == "4*8") {
+      if (value == "2+2/0") {
         const file1 = {
           name: 'TOP LEVEL SECRET WINDOW',
           icon: 'image',
           level: 1,
-          comp: <p className="p-8">SECRET WINDOW PASS CODE - 1234</p>,
+          comp: <div className="p-8">
+            <img src="./map.png" />
+            <ul className="disc mt-4">
+              <li className="text-warning">yellow: daily needs</li>
+              <li className="text-accent">purple: whispering pages</li>
+              <li className="text-error"> red: rose cafe</li>
+              <li className="text-primary"> blue: mall</li>
+              <li className="text-success"> green: evergreen meadows</li>
+            </ul>
+          </div>,
         }
         handle(file1)
         console.log("access granted")
+        setValue(0)
+        toast("Secret Map Unlocked!")
       }
     } catch (error) {
       toast("Someone is trying to cook garbage!! 🔥🔥 ")
     }
+
   }
 
   return <div className="p-5 bg-base-100">

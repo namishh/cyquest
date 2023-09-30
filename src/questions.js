@@ -29,9 +29,9 @@ const questions = [
   },
   {
     question: <div>
-      <p className="question">ok</p>
+      <a href="https://pastebin.com/PNtBmZ2c" className="question underline text-blue-500">Begin the gauntlet</a>
     </div>,
-    answer: "wow",
+    answer: "charon",
     lvl: 5,
   },
   {
@@ -78,7 +78,7 @@ const questions = [
   },
   {
     question: <div>
-      <p className="question">the wombat and the rich borzoi do go together pretty well. i hope the journey of the grimm brothers under the moon will be pleasant. {"<"}3</p>
+      <p className="question">https://drive.google.com/file/d/1STWrWBj8tS8eIyDS-2rx7wdnhk5gjroy/view?usp=sharing</p>
     </div>,
     answer: "thepolicecallme",
     lvl: 12,
@@ -120,9 +120,9 @@ const questions = [
   },
   {
     question: <div>
-      <a href="https://imgur.com/a/v3Upu9g" className="text-blue-500 underline">click here</a>
+      <a href="https://imgur.com/a/IpqsofR" className="text-blue-500 underline">click here</a>
     </div>,
-    answer: "toddsoley",
+    answer: "valley",
     lvl: 18,
   },
   {
