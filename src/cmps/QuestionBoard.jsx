@@ -32,10 +32,8 @@ const QuestionBoard = () => {
   const totalQuestions = questions.length
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(acc)
     setAnswer("")
     if (encodeRailFenceCipher(loadDB(answer, Number(process.env.REACT_APP_LOADING)), Number(process.env.REACT_APP_RAIL)) === question.answer) {
-      console.log(info, totalQuestions)
       if (info.level < totalQuestions) {
         setInfo({ ...info, level: info.level + 1 })
         setQuestion(questions[info.level])

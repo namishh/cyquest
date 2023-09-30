@@ -256,13 +256,11 @@ const ChatWindow = () => {
       let newChats = [...n, t]
       chats = newChats
       d.logs.push(msg)
-      console.log(data.chats)
       const col = collection(db, 'users')
       const a = await getDocs(col)
       const b = a.docs.map(doc => ({ data: doc.data() }))
       const exists = b.find(c => c.data.uid === gameData.uid)
       setText('')
-      console.log(msg)
       if (text === "secretcode" && user == "Sherlock") {
         const file1 = {
           name: 'TOP LEVEL SECRET WINDOW',

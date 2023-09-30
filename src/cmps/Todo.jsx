@@ -35,7 +35,6 @@ const Todo = () => {
     const newState = !i.completed
     const newArr = todo.filter(a => a.task !== i.task)
     const n = { task: i.task, completed: newState }
-    console.log(n)
     setTodo([...newArr, { task: i.task, completed: newState }])
   }
   const remove = (i) => {
