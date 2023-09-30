@@ -4,12 +4,24 @@ import { useState } from 'react';
 const Todo = () => {
   const [todo, setTodo] = useState([
     {
-      task: "buy eggs",
+      task: "game night with homie atharva",
       completed: true
     },
     {
-      task: "study",
+      task: "bookstore visit",
+      completed: true,
+    },
+    {
+      task: "atharva summary note",
+      completed: true,
+    },
+    {
+      task: "groceries",
       completed: false
+    },
+    {
+      task: "talk to maya",
+      completed: true
     }
   ])
   const [input, setInput] = useState("")

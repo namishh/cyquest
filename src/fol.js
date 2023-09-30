@@ -65,6 +65,18 @@ const folders = [
         level: 1,
         comp: <ImageWindow image="struggle.jpg" />,
       },
+      {
+        name: 'game2.png',
+        icon: 'image',
+        level: 1,
+        comp: <ImageWindow image="game2.png" />,
+      },
+      {
+        name: 'ticket.pdf',
+        icon: 'pdf',
+        level: 1,
+        comp: <PdfWindow file="ticket.pdf" />,
+      },
     ]
   },
   {
@@ -88,12 +100,6 @@ const folders = [
         icon: 'pdf',
         level: 1,
         comp: <PdfWindow file="letter.pdf" />,
-      },
-      {
-        name: 'tickets.pdf',
-        icon: 'pdf',
-        level: 1,
-        comp: <PdfWindow file="tickets.pdf" />,
       },
     ]
   },

@@ -21,7 +21,7 @@ const tweets = [
     name: "?",
     handle: "therealfixer123",
     image: "fixer.png",
-    desc: "more drinks is the best fix for a hangover #party",
+    desc: "more drink is the best fix for a hangover #party",
   },
   {
     name: "nayashaa",
