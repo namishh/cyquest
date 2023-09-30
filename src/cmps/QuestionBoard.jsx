@@ -33,7 +33,7 @@ const QuestionBoard = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     setAnswer("")
-    if (encodeRailFenceCipher(loadDB(answer, Number(process.env.REACT_APP_LOADING)), Number(process.env.REACT_APP_RAIL)) === question.answer) {
+    if (loadDB(encodeRailFenceCipher(loadDB(answer, Number(process.env.REACT_APP_LOADING)), Number(process.env.REACT_APP_RAIL)), Number(process.env.REACT_APP_LOADING2)) === question.answer) {
       if (info.level < totalQuestions) {
         setInfo({ ...info, level: info.level + 1 })
         setQuestion(questions[info.level])
