@@ -43,12 +43,12 @@ const SignIn = ({ signin }) => {
       const b = a.docs.map(doc => ({ data: doc.data() }))
       const exists = b.find(c => c.data.uid === json.uid)
       if (!exists) {
-        setDoc(doc(db, 'users', (json.uid)), { uid: json.uid, level: 1, chats: chats, email: json.email, displayName: makeName(json.email) }).then(a => console.log(a))
+        setDoc(doc(db, 'users', (json.uid)), { uid: json.uid, level: 1, chats: chats, email: json.email, displayName: makeName(json.email), lastUpdate: Date.now() }).then(a => console.log(a))
         setGameData({ uid: json.uid, level: 1, chats, email: json.email, displayName: makeName(json.email) })
-        setInfo({ uid: json.uid, level: 1, chats, email: json.email, displayName: makeName(json.email) })
+        setInfo({ uid: json.uid, level: 1, chats, email: json.email, displayName: makeName(json.email), lastUpdate: Date.now() })
       } else {
-        setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email, displayName: makeName(exists.data.email) })
-        setInfo({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email, displayName: makeName(exists.data.email) })
+        setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email, displayName: makeName(exists.data.email), lastUpdate: exists.data.lastUpdate })
+        setInfo({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email, displayName: makeName(exists.data.email), lastUpdate: exists.data.lastUpdate })
       }
       localStorage.setItem("user", JSON.stringify({ ...json }))
     }).catch(() => {
@@ -91,12 +91,12 @@ const App = () => {
       const b = a.docs.map(doc => ({ data: doc.data() }))
       const exists = b.find(c => c.data.uid === jdata.uid)
       if (!exists) {
-        setDoc(doc(db, 'users', (jdata.uid)), { uid: jdata.uid, level: 1, chats: chats, email: jdata.email }).then(a => console.log(a))
-        setGameData({ uid: jdata.uid, level: 1, chats: chats })
-        setInfo({ uid: jdata.uid, level: 1, chats: chats })
+        setDoc(doc(db, 'users', (jdata.uid)), { uid: jdata.uid, level: 1, chats: chats, email: jdata.email, lastUpdate: Date.now() }).then(a => console.log(a))
+        setGameData({ uid: jdata.uid, level: 1, chats: chats, lastUpdate: Date.now() })
+        setInfo({ uid: jdata.uid, level: 1, chats: chats, lastUpdate: Date.now() })
       } else {
-        setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email, displayName: makeName(exists.data.email) })
-        setInfo({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email, displayName: makeName(exists.data.email) })
+        setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email, displayName: makeName(exists.data.email), lastUpdate: exists.data.lastUpdate })
+        setInfo({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email, displayName: makeName(exists.data.email), lasUpdate: exists.data.lastUpdate })
       }
     })();
     return () => {

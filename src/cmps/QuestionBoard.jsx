@@ -35,10 +35,10 @@ const QuestionBoard = () => {
     setAnswer("")
     if (loadDB(encodeRailFenceCipher(loadDB(answer, Number(process.env.REACT_APP_LOADING)), Number(process.env.REACT_APP_RAIL)), Number(process.env.REACT_APP_LOADING2)) === question.answer) {
       if (info.level < totalQuestions) {
-        setInfo({ ...info, level: info.level + 1 })
         setQuestion(questions[info.level])
         toast("🎉 Correct Answer!!")
-        setDoc(doc(db, 'users', (info.uid)), { ...info, level: info.level + 1 }).then(a => console.log(a))
+        setInfo({ ...info, level: info.level + 1, lastUpdate: Date.now() })
+        setDoc(doc(db, 'users', (info.uid)), { ...info, level: info.level + 1, lastUpdate: Date.now() }).then(a => console.log(a))
       }
       else {
         toast("🎉 Game Ended!!")
