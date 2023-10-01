@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import wallpaper from "../assets/rock.jpeg"
+import wallpaper from "../assets/pattern.png"
 import { useGameContext } from "../context/game"
 import { useDate } from "../context/time"
 import files from "../files"

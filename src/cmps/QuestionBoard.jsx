@@ -1,4 +1,5 @@
 import questions from "../questions"
+import bcrypt from 'bcryptjs';
 import { useGameContext } from "../context/game"
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase"
@@ -29,11 +30,13 @@ var loadDB = function(str, amount) {
 const QuestionBoard = () => {
   const { question, setQuestion, acc, info, setInfo } = useGameContext()
   const [answer, setAnswer] = useState("")
+  console.log(question)
   const totalQuestions = questions.length
   const handleSubmit = (e) => {
     e.preventDefault()
     setAnswer("")
-    if (loadDB(encodeRailFenceCipher(loadDB(answer, Number(process.env.REACT_APP_LOADING)), Number(process.env.REACT_APP_RAIL)), Number(process.env.REACT_APP_LOADING2)) === question.answer) {
+    console.log(bcrypt.compareSync(loadDB(encodeRailFenceCipher(loadDB(answer, Number(process.env.REACT_APP_LOADING)), Number(process.env.REACT_APP_RAIL)), Number(process.env.REACT_APP_LOADING2)), question.answer))
+    if (bcrypt.compareSync(loadDB(encodeRailFenceCipher(loadDB(answer, Number(process.env.REACT_APP_LOADING)), Number(process.env.REACT_APP_RAIL)), Number(process.env.REACT_APP_LOADING2)), question.answer)) {
       if (info.level < totalQuestions) {
         setQuestion(questions[info.level])
         toast("🎉 Correct Answer!!")

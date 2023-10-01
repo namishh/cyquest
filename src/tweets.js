@@ -30,6 +30,12 @@ const tweets = [
     desc: "Tried a unique fusion restaurant in town today – sushi burritos! A culinary adventure like no other. I was skeptical but i was AMAZINGGGG",
   },
   {
+    name: "rip32",
+    handle: "rip32",
+    image: "rip32.png",
+    desc: "https://www.youtube.com/watch?v=3_nprPycZow <- this is amazing."
+  },
+  {
     name: "ArtisticSoul",
     handle: "ArtisticSoul_42",
     image: "artw.png",
