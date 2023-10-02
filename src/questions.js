@@ -82,14 +82,14 @@ const questions = [
     question: <div>
       <p className="question">https://drive.google.com/file/d/1R2hqgkAGWpakUDxDHKAQz4YEIacLj73v/view?usp=drive_link</p>
     </div>,
-    answer: bcrypt.hashSync(process.env.REACT_APP_A12, saltRounds),
+    answer: bcrypt.hashSync(process.env.REACT_APP_A13, saltRounds),
     lvl: 12,
   },
   {
     question: <div>
       <a href="https://imgur.com/a/ebHJe9o" className="text-blue-500 underline">hmmm</a>
     </div>,
-    answer: bcrypt.hashSync(process.env.REACT_APP_A13, saltRounds),
+    answer: bcrypt.hashSync(process.env.REACT_APP_A12, saltRounds),
     lvl: 13,
   },
   {

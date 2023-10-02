@@ -45,6 +45,8 @@ const QuestionBoard = () => {
       }
       else {
         toast("🎉 Game Ended!!")
+        setInfo({ ...info, displayName: info.displayName + " 👑 ", lastUpdate: Date.now() })
+        setDoc(doc(db, 'users', (info.uid)), { ...info, displayName: info.displayName + " 👑 ", lastUpdate: Date.now() }).then(a => console.log(a))
       }
     } else {
       toast("😠 Wrong Answer!!")
@@ -73,7 +75,7 @@ const QuestionBoard = () => {
     <p>{question.question}</p>
     <form action="#" onSubmit={handleSubmit}>
       <div className="mt-8 relative bg-[#1c1c1c]" data-te-input-wrapper-init>
-        <input className=" bg-transparent p-4 w-[30rem] h-[4rem] outline-none" value={answer}
+        <input disabled={info.level >= 25 ? true : false} className=" bg-transparent p-4 w-[30rem] h-[4rem] outline-none" value={answer}
           onChange={(e) => setAnswer(e.target.value)} />
       </div>
     </form>
