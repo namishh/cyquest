@@ -92,8 +92,8 @@ const App = () => {
       const exists = b.find(c => c.data.uid === jdata.uid)
       if (!exists) {
         setDoc(doc(db, 'users', (jdata.uid)), { uid: jdata.uid, level: 1, chats: chats, email: jdata.email, lastUpdate: Date.now() }).then(a => console.log(a))
-        setGameData({ uid: jdata.uid, level: 1, chats: chats, lastUpdate: Date.now() })
-        setInfo({ uid: jdata.uid, level: 1, chats: chats, lastUpdate: Date.now() })
+        setGameData({ uid: jdata.uid, level: 1, chats: chats, lastUpdate: Date.now(), displayName: makeName(jdata.email), })
+        setInfo({ uid: jdata.uid, level: 1, chats: chats, displayName: makeName(jdata.email), lastUpdate: Date.now() })
       } else {
         setGameData({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email, displayName: makeName(exists.data.email), lastUpdate: exists.data.lastUpdate })
         setInfo({ uid: exists.data.uid, level: exists.data.level, chats: exists.data.chats, email: exists.data.email, displayName: makeName(exists.data.email), lasUpdate: exists.data.lastUpdate })
