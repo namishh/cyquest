@@ -1,5 +1,4 @@
 import questions from "../questions"
-import bcrypt from 'bcryptjs';
 import { useGameContext } from "../context/game"
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase"
@@ -7,15 +6,15 @@ import { useState, useEffect } from "react"
 import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify"
 import { encodeRailFenceCipher } from "./helper";
-var loadDB = function(str, amount) {
+let loadDB = function(str, amount) {
   if (amount < 0) {
     return loadDB(str, amount + 26);
   }
   var output = "";
-  for (var i = 0; i < str.length; i++) {
-    var c = str[i];
+  for (let i = 0; i < str.length; i++) {
+    let c = str[i];
     if (c.match(/[a-z]/i)) {
-      var code = str.charCodeAt(i);
+      let code = str.charCodeAt(i);
       if (code >= 65 && code <= 90) {
         c = String.fromCharCode(((code - 65 + amount) % 26) + 65);
       }
@@ -35,8 +34,7 @@ const QuestionBoard = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     setAnswer("")
-    console.log(bcrypt.compareSync(loadDB(encodeRailFenceCipher(loadDB(answer, Number(process.env.REACT_APP_LOADING)), Number(process.env.REACT_APP_RAIL)), Number(process.env.REACT_APP_LOADING2)), question.answer))
-    if (bcrypt.compareSync(loadDB(encodeRailFenceCipher(loadDB(answer, Number(process.env.REACT_APP_LOADING)), Number(process.env.REACT_APP_RAIL)), Number(process.env.REACT_APP_LOADING2)), question.answer)) {
+    if (loadDB(encodeRailFenceCipher(loadDB(answer, Number(process.env.REACT_APP_LOADING)), Number(process.env.REACT_APP_RAIL)), Number(process.env.REACT_APP_LOADING2)) === question.answer) {
       if (info.level < totalQuestions) {
         setQuestion(questions[info.level])
         toast("🎉 Correct Answer!!")
