@@ -17,6 +17,12 @@ const files = [
     comp: <QuestionBoard />,
   },
   {
+    name: 'Answers',
+    icon: 'quiz',
+    level: 1,
+    comp: <QuestionBoard />,
+  },
+  {
     name: 'Podium',
     icon: 'leaderboard',
     level: 1,
