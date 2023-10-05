@@ -18,9 +18,32 @@ const files = [
   },
   {
     name: 'Answers',
-    icon: 'quiz',
+    icon: 'key',
     level: 1,
-    comp: <QuestionBoard />,
+    comp: <div className="p-8">
+      <ul className="list-decimal">
+        <li>davincicode</li>
+        <li>speaknow</li>
+        <li>georgeinthejungle</li>
+        <li>lorrainebaker</li>
+        <li>charon</li>
+        <li>darci</li>
+        <li>serendipity</li>
+        <li>gratiarveritasnaturae</li>
+        <li>helloworld</li>
+        <li>hmmiwonder</li>
+        <li>heylog</li>
+        <li>thepolicecallme</li>
+        <li>onlyyouknowitiguess</li>
+        <li>akali</li>
+        <li>saefmtwest</li>
+        <li>roryodgen</li>
+        <li>toddsoley</li>
+        <li>valley</li>
+        <li>thehungergames</li>
+        <li>automaticdynamicincrementalnonlinearanalysis</li>
+      </ul>
+    </div>,
   },
   {
     name: 'Podium',

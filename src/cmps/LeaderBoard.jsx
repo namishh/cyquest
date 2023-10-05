@@ -34,7 +34,7 @@ const LeaderBoard = () => {
         </thead>
         <tbody>
           {chats.map((i, j) => {
-            return <tr key={j} >
+            return j <= 10 && <tr key={j} >
               <th>{j + 1}</th>
               <td>{i.user.toUpperCase()}</td>
               <td>{i.lvl * 1000}</td>
